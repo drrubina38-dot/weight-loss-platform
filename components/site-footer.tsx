@@ -1,13 +1,7 @@
+import { Leaf, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+
+import { FaInstagram, FaTiktok } from "react-icons/fa6";
 import Link from "next/link";
-import {
-  Leaf,
-  Mail,
-  MapPin,
-  Phone,
-  MessageCircle,
-  Instagram,
-  Music2,
-} from "lucide-react";
 import { site } from "@/lib/site";
 
 const columns = [
@@ -100,7 +94,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="rounded-full border p-2 transition hover:bg-pink-100"
               >
-                <Instagram className="size-5 text-pink-600" />
+                <FaInstagram className="size-5 text-pink-600" />
               </a>
 
               <a
@@ -109,7 +103,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="rounded-full border p-2 transition hover:bg-gray-100"
               >
-                <Music2 className="size-5" />
+                <FaTiktok className="size-5" />
               </a>
 
               <a
