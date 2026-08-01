@@ -36,7 +36,7 @@ export function Highlights() {
             {highlights.map((h) => (
               <div
                 key={h.title}
-                className="rounded-2xl border border-border bg-card p-5 shadow-sm"
+                className="rounded-2xl border border-primary/10 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <span className="flex size-11 items-center justify-center rounded-xl bg-secondary text-primary">
                   <h.icon className="size-5" />
@@ -56,21 +56,21 @@ export function Highlights() {
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
             Our Product
           </p>
-          <h2 className="mt-2 text-balance font-serif text-3xl font-semibold text-foreground sm:text-4xl">
+          <h2 className="mt-2 text-balance font-serif text-4xl font-bold text-foreground sm:text-5xl">
             {product.name}
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-xl text-pretty leading-8 text-muted-foreground">
             {product.tagline}
           </p>
 
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <span className="text-3xl font-bold text-foreground">
               {site.currency} {product.price.toLocaleString()}
             </span>
             <span className="text-lg text-muted-foreground line-through">
               {site.currency} {product.oldPrice.toLocaleString()}
             </span>
-            <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+            <span className="rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold text-green-700">
               Save{" "}
               {Math.round(
                 ((product.oldPrice - product.price) / product.oldPrice) * 100,
@@ -79,19 +79,32 @@ export function Highlights() {
             </span>
           </div>
 
-          <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-secondary/40">
+          <div className="mt-6 overflow-hidden rounded-3xl border border-primary/10 bg-gradient-to-br from-white to-green-50 shadow-xl">
             <Image
               src={product.images[0] || "/placeholder.svg"}
               alt={product.name}
               width={600}
               height={400}
-              className="mx-auto h-56 w-auto object-contain py-4"
+              className="mx-auto h-80 w-auto object-contain p-6 transition-transform duration-500 hover:scale-105"
             />
           </div>
 
-          <div className="mt-6">
-            <LinkButton href="/product#order" size="lg">
-              Order Now — COD
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <LinkButton
+              href="/product#order"
+              size="lg"
+              className="min-w-[220px] justify-center"
+            >
+              🛒 Order Now - Cash on Delivery
+            </LinkButton>
+
+            <LinkButton
+              href="/product"
+              variant="outline"
+              size="lg"
+              className="min-w-[220px] justify-center"
+            >
+              📦 View Full Details
             </LinkButton>
           </div>
         </div>
