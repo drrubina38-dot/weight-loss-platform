@@ -1,6 +1,6 @@
 import { Leaf, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
 
-import { FaInstagram, FaTiktok } from "react-icons/fa6";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
