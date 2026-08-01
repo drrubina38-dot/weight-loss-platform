@@ -6,124 +6,83 @@ import { ReviewsSection } from "@/components/home/reviews-section";
 import { CtaBand } from "@/components/home/cta-band";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { JsonLd } from "@/components/json-ld";
+
 import { faqs } from "@/lib/faq";
-import { product } from "@/lib/product";
 import { site } from "@/lib/site";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+
+  name: site.name,
+  url: site.url,
+  logo: `${site.url}/icon.png`,
+
+  description: site.description,
+
+  email: site.email,
+  telephone: site.phone,
+
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PK",
+  },
+
+  sameAs: [
+    "https://www.instagram.com/drrubina06",
+    "https://www.tiktok.com/@drrubina06",
+  ],
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is Cash on Delivery available?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Cash on Delivery is available across Pakistan.",
-      },
+
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+
+    name: faq.question,
+
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
     },
-    {
-      "@type": "Question",
-      name: "How long does delivery take?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Orders are usually delivered within 2–4 working days, depending on your location.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can I place an order?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "You can place your order using the online order form or contact us through WhatsApp.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is customer support available?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Our support team is available to help with your order and general product questions.",
-      },
-    },
-  ],
+  })),
 };
+
 export default function HomePage() {
   return (
     <>
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Product",
+      <JsonLd data={organizationSchema} />
 
-          name: product.name,
-
-          image: product.images.map((img) => `${site.url}${img}`),
-
-          description: product.tagline,
-
-          sku: "DRR-001",
-
-          category: "Herbal Wellness",
-
-          brand: {
-            "@type": "Brand",
-            name: site.name,
-          },
-
-          manufacturer: {
-            "@type": "Organization",
-            name: site.name,
-          },
-
-          offers: {
-            "@type": "Offer",
-            url: `${site.url}/product`,
-            priceCurrency: "PKR",
-            price: product.price,
-            availability: "https://schema.org/InStock",
-            itemCondition: "https://schema.org/NewCondition",
-            seller: {
-              "@type": "Organization",
-              name: site.name,
-            },
-          },
-
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: product.rating,
-            reviewCount: product.reviewCount,
-            bestRating: "5",
-            worstRating: "1",
-          },
-        }}
-      />
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
-            "@type": "Question",
-            name: f.question,
-            acceptedAnswer: { "@type": "Answer", text: f.answer },
-          })),
-        }}
-      />
-
+      <JsonLd data={faqSchema} />
       <Hero />
+
       <Highlights />
+
       <Benefits />
+
       <HowItWorks />
+
       <ReviewsSection />
 
+      {/* FAQ */}
       <section className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            FAQ
+            Frequently Asked Questions
           </p>
-          <h2 className="mt-2 text-balance font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-            Frequently asked questions
+
+          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold text-foreground sm:text-4xl">
+            Everything You Need to Know
           </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+            Find answers to the most common questions about our product,
+            delivery, Cash on Delivery, and customer support.
+          </p>
         </div>
+
         <div className="mt-10">
           <FaqAccordion faqs={faqs} />
         </div>
