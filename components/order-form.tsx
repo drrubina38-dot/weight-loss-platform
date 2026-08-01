@@ -14,7 +14,11 @@ import {
 import { product } from "@/lib/product";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
-
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 const MAX_QUANTITY = 10;
 
 export function OrderForm() {
@@ -33,7 +37,18 @@ export function OrderForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "purchase", {
+        currency: "PKR",
+        value: summary?.total || total,
+        items: [
+          {
+            item_name: product.name,
+            quantity,
+          },
+        ],
+      });
+    }
     setStatus("submitting");
     setMessage("");
 
