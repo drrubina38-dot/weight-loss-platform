@@ -2,12 +2,6 @@ import { NextResponse } from "next/server";
 import { product } from "@/lib/product";
 import { supabaseAdmin } from "@/lib/supabase";
 
-/**
- * COD Order endpoint — persists orders to Supabase.
- * Matches the actual `orders` table columns:
- * id, created_at, name, phone, city, address, quantity, status.
- */
-
 type OrderInput = {
   fullName?: string;
   mobile?: string;
@@ -17,7 +11,6 @@ type OrderInput = {
 };
 
 const MAX_QUANTITY = 10;
-
 async function saveOrder(order: {
   fullName: string;
   mobile: string;
@@ -26,35 +19,54 @@ async function saveOrder(order: {
   quantity: number;
   status: string;
 }) {
-  // Handle both function or object export safely for Supabase client
-  const supabase =
-    typeof supabaseAdmin === "function"
-      ? (supabaseAdmin as any)()
-      : supabaseAdmin;
+  const supabase = supabaseAdmin();
 
-  const { error } = await supabase.from("orders").insert({
-    name: order.fullName,
-    phone: order.mobile,
-    city: order.city,
-    address: order.address,
-    quantity: order.quantity,
-    status: order.status,
-  });
+  console.log("Saving order:", order);
+
+  const { data, error } = await supabase
+    .from("orders")
+    .insert({
+      name: order.fullName,
+      phone: order.mobile,
+      city: order.city,
+      address: order.address,
+      quantity: order.quantity,
+      status: order.status,
+    })
+    .select();
+
+  console.log("SUPABASE DATA:", data);
+  console.log("SUPABASE ERROR:", error);
 
   if (error) {
-    console.log("[v0] Supabase insert error:", error.message);
-    throw error;
+    throw new Error(error.message);
   }
+
+  return data;
 }
 
 export async function POST(request: Request) {
+  console.log("========== ENV ==========");
+  console.log("SUPABASE_URL:", process.env.SUPABASE_URL);
+  console.log(
+    "SERVICE_ROLE_KEY EXISTS:",
+    !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+  );
+  console.log("=========================");
+
   let body: OrderInput;
+
   try {
     body = await request.json();
   } catch {
     return NextResponse.json(
-      { ok: false, error: "Invalid request body." },
-      { status: 400 },
+      {
+        ok: false,
+        error: "Invalid request body.",
+      },
+      {
+        status: 400,
+      },
     );
   }
 
@@ -65,23 +77,33 @@ export async function POST(request: Request) {
   const quantity = Number(body.quantity ?? 1);
 
   const errors: string[] = [];
+
   if (fullName.length < 3) errors.push("Please enter your full name.");
+
   if (!/^(\+?92|0)3\d{9}$/.test(mobile.replace(/[\s-]/g, ""))) {
     errors.push(
       "Please enter a valid Pakistani mobile number (e.g. 03001234567).",
     );
   }
+
   if (city.length < 2) errors.push("Please enter your city.");
+
   if (address.length < 10)
     errors.push("Please enter your complete delivery address.");
+
   if (!Number.isInteger(quantity) || quantity < 1 || quantity > MAX_QUANTITY) {
     errors.push(`Quantity must be between 1 and ${MAX_QUANTITY}.`);
   }
 
   if (errors.length > 0) {
     return NextResponse.json(
-      { ok: false, error: errors.join(" ") },
-      { status: 422 },
+      {
+        ok: false,
+        error: errors.join(" "),
+      },
+      {
+        status: 422,
+      },
     );
   }
 
@@ -93,30 +115,32 @@ export async function POST(request: Request) {
     city,
     address,
     quantity,
-    product: product?.name ?? "Product",
-    unitPrice: product?.price ?? 0,
-    total,
     status: "pending",
-    createdAt: new Date().toISOString(),
   };
 
   try {
     await saveOrder(order);
+
+    return NextResponse.json({
+      ok: true,
+      message:
+        "Order placed successfully! Our team will call you shortly to confirm.",
+      orderSummary: {
+        quantity,
+        total,
+      },
+    });
   } catch (err: any) {
-    console.log("[v0] Failed to save order:", err);
+    console.error("FULL ERROR:", err);
+
     return NextResponse.json(
       {
         ok: false,
-        error: "Something went wrong saving your order. Please try again.",
+        error: err?.message || "Unknown error",
       },
-      { status: 500 },
+      {
+        status: 500,
+      },
     );
   }
-
-  return NextResponse.json({
-    ok: true,
-    message:
-      "Order placed successfully! Our team will call you shortly to confirm.",
-    orderSummary: { quantity, total },
-  });
 }
