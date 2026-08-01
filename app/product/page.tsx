@@ -8,13 +8,73 @@ import { JsonLd } from "@/components/json-ld";
 import { product } from "@/lib/product";
 import { site } from "@/lib/site";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is Cash on Delivery available?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Cash on Delivery is available across Pakistan.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does delivery take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Orders are usually delivered within 2–4 working days.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I place an order?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can place your order through the online order form or WhatsApp.",
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: site.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Product",
+      item: `${site.url}/product`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Dr Rubina Phaki",
+      item: `${site.url}/product`,
+    },
+  ],
+};
+<JsonLd data={breadcrumbSchema} />;
+<JsonLd data={faqSchema} />;
 export const metadata: Metadata = {
-  title: `${product.name} — Order with Cash on Delivery`,
-  description: `${product.tagline} Order ${product.name} online in Pakistan with Cash on Delivery. ${product.servings}.`,
-  alternates: { canonical: "/product" },
+  title: `Dr Rubina Phaki | Original Weight Loss Phaki in Pakistan | Cash on Delivery`,
+  description:
+    "Buy Original Dr Rubina Phaki online in Pakistan with Cash on Delivery. Official website, nationwide delivery, secure ordering and customer support.",
   openGraph: {
-    title: product.name,
-    description: product.tagline,
+    title: "Dr Rubina Phaki | Original Weight Loss Phaki",
+    description:
+      "Buy Original Dr Rubina Phaki online in Pakistan with Cash on Delivery.",
+    url: `${site.url}/product`,
+    type: "website",
     images: [{ url: product.images[0] }],
   },
 };
@@ -26,21 +86,46 @@ export default function ProductPage() {
         data={{
           "@context": "https://schema.org",
           "@type": "Product",
+
           name: product.name,
+
           image: product.images.map((i) => `${site.url}${i}`),
+
           description: product.tagline,
-          brand: { "@type": "Brand", name: site.name },
+
+          sku: "DRP-001",
+
+          category: "Weight Loss Phaki",
+
+          brand: {
+            "@type": "Brand",
+            name: site.name,
+          },
+
+          manufacturer: {
+            "@type": "Organization",
+            name: site.name,
+          },
+
           offers: {
             "@type": "Offer",
+            url: `${site.url}/product`,
             priceCurrency: "PKR",
             price: product.price,
             availability: "https://schema.org/InStock",
-            url: `${site.url}/product`,
+            itemCondition: "https://schema.org/NewCondition",
+            seller: {
+              "@type": "Organization",
+              name: site.name,
+            },
           },
+
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: product.rating,
             reviewCount: product.reviewCount,
+            bestRating: "5",
+            worstRating: "1",
           },
         }}
       />
