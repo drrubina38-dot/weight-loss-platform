@@ -5,7 +5,7 @@ import { supabaseAdmin } from "@/lib/supabase";
 /**
  * COD Order endpoint — persists orders to Supabase.
  * Matches the actual `orders` table columns:
- *   id, created_at, name, phone, city, address, quantity, status.
+ * id, created_at, name, phone, city, address, quantity, status.
  */
 
 type OrderInput = {
@@ -26,7 +26,12 @@ async function saveOrder(order: {
   quantity: number;
   status: string;
 }) {
-  const supabase = supabaseAdmin();
+  // Handle both function or object export safely for Supabase client
+  const supabase =
+    typeof supabaseAdmin === "function"
+      ? (supabaseAdmin as any)()
+      : supabaseAdmin;
+
   const { error } = await supabase.from("orders").insert({
     name: order.fullName,
     phone: order.mobile,
@@ -80,7 +85,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const total = product.price * quantity;
+  const total = (product?.price ?? 0) * quantity;
 
   const order = {
     fullName,
@@ -88,8 +93,8 @@ export async function POST(request: Request) {
     city,
     address,
     quantity,
-    product: product.name,
-    unitPrice: product.price,
+    product: product?.name ?? "Product",
+    unitPrice: product?.price ?? 0,
     total,
     status: "pending",
     createdAt: new Date().toISOString(),
@@ -97,7 +102,7 @@ export async function POST(request: Request) {
 
   try {
     await saveOrder(order);
-  } catch (err) {
+  } catch (err: any) {
     console.log("[v0] Failed to save order:", err);
     return NextResponse.json(
       {
