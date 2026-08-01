@@ -1,5 +1,4 @@
 // Central site configuration
-
 export const site = {
   name: "Dr. Rubina Official",
   tagline: "Natural Weight Management & Healthy Lifestyle",
