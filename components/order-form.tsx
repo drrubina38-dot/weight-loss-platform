@@ -33,7 +33,7 @@ export function OrderForm() {
   } | null>(null);
 
   const total = product.price * quantity;
-  const freeDelivery = quantity >= 2;
+  const freeDelivery = true;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -288,7 +288,7 @@ export function OrderForm() {
                 freeDelivery ? "font-semibold text-green-600" : "font-semibold"
               }
             >
-              {freeDelivery ? "FREE" : `${site.currency} 200`}
+              FREE
             </span>
           </div>
 
@@ -296,8 +296,7 @@ export function OrderForm() {
             <span>Total</span>
 
             <span>
-              {site.currency}{" "}
-              {(total + (freeDelivery ? 0 : 200)).toLocaleString()}
+              {site.currency} {total.toLocaleString()}
             </span>
           </div>
         </div>
