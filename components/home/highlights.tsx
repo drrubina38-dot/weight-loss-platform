@@ -79,13 +79,13 @@ export function Highlights() {
             </span>
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-3xl border border-border bg-secondary/40 p-4">
+          <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-secondary/40">
             <Image
               src={product.images[0] || "/placeholder.svg"}
               alt={product.name}
-              width={900}
-              height={600}
-              className="h-[320px] w-full rounded-2xl object-cover"
+              width={600}
+              height={400}
+              className="mx-auto h-56 w-auto object-contain py-4"
             />
           </div>
 
