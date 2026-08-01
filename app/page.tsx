@@ -9,7 +9,44 @@ import { JsonLd } from "@/components/json-ld";
 import { faqs } from "@/lib/faq";
 import { product } from "@/lib/product";
 import { site } from "@/lib/site";
-
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is Cash on Delivery available?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Cash on Delivery is available across Pakistan.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does delivery take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Orders are usually delivered within 2–4 working days, depending on your location.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I place an order?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can place your order using the online order form or contact us through WhatsApp.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is customer support available?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Our support team is available to help with your order and general product questions.",
+      },
+    },
+  ],
+};
 export default function HomePage() {
   return (
     <>
