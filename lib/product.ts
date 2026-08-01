@@ -17,8 +17,8 @@ export const product = {
     "/product-2.png",
     "/product-3.png",
     "/product-4.png",
-    "/product-5.png",
-    "/product-6.png",
+    // "/product-5.png",
+    // "/product-6.png",
   ],
 
   benefits: [
