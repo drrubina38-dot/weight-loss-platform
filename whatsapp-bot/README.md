@@ -156,6 +156,65 @@ pm2 startup
 > Baileys stores the session on the local filesystem, so keep `auth_info/`
 > with your deployment (don't delete it between restarts).
 
+## Deploying on Render (free tier)
+
+Render free has two blockers for this bot, and this project works around both:
+
+1. **Free instances sleep after 15 min of no traffic** → the bot adds a health
+   server and self-pings its own public URL (`RENDER_EXTERNAL_URL`) every 10
+   minutes, which counts as inbound traffic and keeps it awake.
+2. **Free instances have an ephemeral filesystem** (the WhatsApp session is
+   wiped on every sleep/restart) → the bot backs `auth_info/` up to a Supabase
+   Storage bucket and restores it on every boot.
+
+### One-time setup
+
+On your laptop (session already exists in `auth_info/`), upload it to
+Supabase Storage once:
+
+```bash
+npm run seed-session   # requires SUPABASE_SERVICE_ROLE_KEY in .env
+```
+
+### Render service
+
+1. Render → **New → Web Service** → connect your GitHub repo.
+2. **Root Directory:** `whatsapp-bot`
+3. **Build Command:** `npm install`
+4. **Start Command:** `node index.js`
+5. **Instance Type:** Free
+6. Add environment variables:
+   - `SUPABASE_URL`
+   - `SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY` (required for session backup)
+   - `WHATSAPP_NUMBER`
+   - `PRODUCT_NAME`
+   - `PRODUCT_PRICE`
+   - `SESSION_BUCKET` (defaults to `wa-session`)
+7. Deploy. Render sets `RENDER_EXTERNAL_URL` automatically, so the keep-alive
+   self-ping turns on by itself.
+
+You should see in the logs:
+```
+[session] Restored N session file(s) from Supabase Storage.
+[whatsapp] Connected to WhatsApp
+[health] Health server listening on port 10000
+[keepalive] Ping https://your-app.onrender.com/health -> 200
+```
+
+### Fragility warning (free tier)
+
+- The instance still uses the shared 750 free compute hours/month; 24/7 uptime
+  consumes ~744 h/month, so it just fits — don't run other free services.
+- Render may restart the instance at any time. The session backup/restore
+  covers this, but in a worst-case hard kill you could lose a few seconds of
+  session changes (usually harmless — the bot re-establishes sessions).
+- **Run the bot on only ONE instance at a time.** The laptop bot and the Render
+  bot cannot share the WhatsApp session simultaneously (they kick each other).
+
+For a zero-worry setup, upgrade this service to Render **Starter ($7/mo)** +
+a small persistent disk — then you can drop the session backup entirely.
+
 ## Disclaimer
 
 This project uses Baileys, which automates the consumer WhatsApp Web protocol.

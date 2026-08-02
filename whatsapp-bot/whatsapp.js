@@ -86,7 +86,7 @@ export function buildOrderMessage(order) {
  * - Automatically reconnects with exponential backoff when the socket drops,
  *   unless the account was explicitly logged out.
  */
-export async function connectWhatsApp() {
+export async function connectWhatsApp({ onSessionChanged } = {}) {
   const { state, saveCreds } = await useMultiFileAuthState(config.authDir);
   const { version } = await fetchLatestBaileysVersion();
 
@@ -146,6 +146,7 @@ export async function connectWhatsApp() {
 
     if (events["creds.update"]) {
       await saveCreds();
+      if (onSessionChanged) onSessionChanged();
     }
   });
 

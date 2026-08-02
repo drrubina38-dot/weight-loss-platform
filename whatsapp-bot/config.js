@@ -9,6 +9,8 @@ export const config = {
   whatsappNumber: get("WHATSAPP_NUMBER"),
   authDir: get("AUTH_DIR") || "auth_info",
   logLevel: get("LOG_LEVEL") || "warn",
+  sessionBucket: get("SESSION_BUCKET") || "wa-session",
+  healthUrl: get("HEALTH_URL"),
   productName: get("PRODUCT_NAME") || "Dr. Rubina Herbal Weight Loss Powder",
   productPrice: get("PRODUCT_PRICE") || "1999",
 };
