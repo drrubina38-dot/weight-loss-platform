@@ -48,7 +48,7 @@ export function Hero() {
           </ul>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <LinkButton
-              href="/product#order"
+              href="/product"
               size="lg"
               className="min-w-[220px] justify-center"
             >

@@ -253,6 +253,44 @@ export default function ProductPage() {
         </div>
       </section>
 
+      <div className="mx-auto max-w-6xl px-4 py-6">
+        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <span aria-hidden="true">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</span>
+        </div>
+      </div>
+
+      <section id="order" className="bg-secondary/40 py-14">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-[2.25rem] border border-border bg-card p-8 shadow-[0_24px_80px_rgba(31,122,69,0.12)] sm:p-10">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
+                Cash on Delivery
+              </p>
+              <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground sm:text-4xl">
+                Place your order
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Cash on Delivery available across Pakistan
+              </p>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Secure ordering • Fast dispatch • Customer confirmation before
+                shipping
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <OrderForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl px-4 py-6">
+        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <span aria-hidden="true">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</span>
+        </div>
+      </div>
+
       <section className="bg-secondary/40 py-14">
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-center gap-2">
@@ -328,7 +366,9 @@ export default function ProductPage() {
             </ol>
 
             <div className="mt-6 rounded-2xl border border-border bg-secondary/40 p-5">
-              <h3 className="font-semibold text-foreground">Helpful reminder</h3>
+              <h3 className="font-semibold text-foreground">
+                Helpful reminder
+              </h3>
               <p className="mt-2 text-sm leading-7 text-muted-foreground">
                 This product is intended to support healthy weight management as
                 part of a balanced routine. Results vary from person to person.
@@ -405,23 +445,6 @@ export default function ProductPage() {
             </p>
           </div>
           <FaqAccordion faqs={productFaqs} />
-        </div>
-      </section>
-
-      <section id="order" className="scroll-mt-20 bg-secondary/40 py-14">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-              Place your Cash on Delivery order
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              Complete the form below. Our support team will contact you to
-              confirm your order before dispatch.
-            </p>
-          </div>
-          <div className="mx-auto mt-8 max-w-xl">
-            <OrderForm />
-          </div>
         </div>
       </section>
     </>
