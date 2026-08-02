@@ -1,13 +1,13 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
+import Script from "next/script";
 import { SiteFooter } from "@/components/site-footer";
-import { WhatsappFab } from "@/components/whatsapp-fab";
+import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
+import { WhatsappFab } from "@/components/whatsapp-fab";
 import { site } from "@/lib/site";
 import "./globals.css";
-import Script from "next/script";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -24,50 +24,74 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Natural Herbal Weight Loss in Pakistan`,
+    default: `${site.name} | Herbal Weight Management Support in Pakistan`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "weight loss Pakistan",
-    "herbal fat burner",
-    "slimming supplement",
-    "natural weight loss",
-    "diet plan Pakistan",
+    "Dr Rubina",
+    "Dr Rubina Official",
+    "herbal weight loss Pakistan",
+    "weight management",
+    "healthy lifestyle",
+    "Pakistani diet plan",
     "BMI calculator",
     "calorie calculator",
+    "weight loss tips",
+    "healthy eating",
+    "fitness Pakistan",
+    "natural wellness",
   ],
-  generator: "v0.app",
   applicationName: site.name,
-  authors: [{ name: site.name }],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    locale: "en_PK",
+    locale: site.locale,
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — Natural Herbal Weight Loss in Pakistan`,
+    title: `${site.name} | Herbal Weight Management Support in Pakistan`,
     description: site.description,
     images: [
-      { url: "/product-bottle.png", width: 1200, height: 1200, alt: site.name },
+      {
+        url: site.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: `${site.name} healthy lifestyle support`,
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Natural Herbal Weight Loss`,
+    title: `${site.name} | Herbal Weight Management Support`,
     description: site.description,
-    images: ["/product-bottle.png"],
+    images: [site.defaultOgImage],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "health",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#16a34a",
+  themeColor: "#1f7a45",
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,
@@ -86,7 +110,10 @@ export default function RootLayout({
       <head>
         <meta name="google-adsense-account" content="ca-pub-1554402367237634" />
       </head>
-      <body className="font-sans antialiased">
+      <body className="min-h-screen bg-background font-sans antialiased">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <JsonLd
           data={{
             "@context": "https://schema.org",
@@ -96,11 +123,30 @@ export default function RootLayout({
             description: site.description,
             email: site.email,
             telephone: site.phone,
+            logo: `${site.url}/apple-icon.png`,
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Lahore",
-              addressCountry: "PK",
+              addressLocality: site.city,
+              addressCountry: site.country,
             },
+            sameAs: [site.instagram, site.tiktok],
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "customer support",
+              telephone: site.phone,
+              areaServed: "PK",
+              availableLanguage: ["en", "ur"],
+            },
+          }}
+        />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: site.name,
+            url: site.url,
+            description: site.description,
+            inLanguage: "en-PK",
           }}
         />
         <Script
@@ -110,7 +156,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <SiteHeader />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <SiteFooter />
         <WhatsappFab />
         {process.env.NODE_ENV === "production" && <Analytics />}
@@ -118,14 +164,13 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-ZVQS8MYYYJ"
           strategy="afterInteractive"
         />
-
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZVQS8MYYYJ');
-  `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZVQS8MYYYJ');
+          `}
         </Script>
       </body>
     </html>

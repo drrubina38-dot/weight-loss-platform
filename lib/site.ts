@@ -1,20 +1,19 @@
-// Central site configuration
 export const site = {
   name: "Dr. Rubina Official",
   tagline: "Natural Weight Management & Healthy Lifestyle",
-
-  // Change this after connecting your custom domain
   url: "https://drrubinaofficial.site",
-
   description:
     "Dr. Rubina Official offers natural herbal wellness products, healthy diet plans, BMI & Calorie Calculators, and expert weight management guidance. Cash on Delivery available all over Pakistan.",
-
+  locale: "en_PK",
   phone: "+923048557141",
   whatsapp: "923048557141",
   email: "drrubina38@gmail.com",
-
-  address: "Pakistan",
-
+  address: "Lahore, Pakistan",
+  city: "Lahore",
+  country: "PK",
+  instagram: "https://www.instagram.com/drrubina06",
+  tiktok: "https://www.tiktok.com/@drrubina06",
+  defaultOgImage: "/hero-lifestyle.png",
   currency: "Rs",
 };
 

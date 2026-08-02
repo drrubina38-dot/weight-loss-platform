@@ -5,9 +5,9 @@ import { LinkButton } from "@/components/ui/link-button";
 import { dietPlans, weightLossTips } from "@/lib/diet";
 
 export const metadata: Metadata = {
-  title: "Healthy Pakistani Diet Plans for Weight Loss",
+  title: "Healthy Pakistani Diet Plans for Weight Management",
   description:
-    "Free healthy Pakistani (desi) diet plans for weight loss with daily meal suggestions, plus practical weight loss tips you can start today.",
+    "Free healthy Pakistani diet plans with daily meal suggestions, practical portion guidance, and realistic weight management tips.",
   alternates: { canonical: "/diet-plans" },
 };
 
@@ -17,10 +17,9 @@ export default function DietPlansPage() {
       <PageHeader
         eyebrow="Free Diet Plans"
         title="Healthy Pakistani Diet Plans"
-        description="Simple, affordable desi meal plans built around local foods — designed to help you lose weight without giving up flavour."
+        description="Simple, affordable desi meal plans built around local foods to support healthier routines without giving up familiar flavors."
       />
 
-      {/* Plans */}
       <section className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-3">
           {dietPlans.map((plan) => (
@@ -40,10 +39,7 @@ export default function DietPlansPage() {
 
               <div className="mt-5 space-y-4">
                 {plan.meals.map((meal) => (
-                  <div
-                    key={meal.time}
-                    className="border-l-2 border-primary/30 pl-4"
-                  >
+                  <div key={meal.time} className="border-l-2 border-primary/30 pl-4">
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                       {meal.time}
                     </p>
@@ -52,10 +48,7 @@ export default function DietPlansPage() {
                     </p>
                     <ul className="mt-1 space-y-0.5">
                       {meal.items.map((item) => (
-                        <li
-                          key={item}
-                          className="text-sm text-muted-foreground"
-                        >
+                        <li key={item} className="text-sm text-muted-foreground">
                           • {item}
                         </li>
                       ))}
@@ -68,23 +61,22 @@ export default function DietPlansPage() {
         </div>
       </section>
 
-      {/* Tips */}
       <section className="bg-secondary/40 py-12 lg:py-16">
         <div className="mx-auto max-w-4xl px-4">
           <div className="flex items-center gap-2">
             <Lightbulb className="size-6 text-primary" />
             <h2 className="font-serif text-2xl font-semibold text-foreground sm:text-3xl">
-              Weight Loss Tips
+              Weight management tips
             </h2>
           </div>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {weightLossTips.map((tip, i) => (
+            {weightLossTips.map((tip, index) => (
               <li
                 key={tip}
                 className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
               >
                 <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
-                  {i + 1}
+                  {index + 1}
                 </span>
                 <span className="text-sm text-foreground">{tip}</span>
               </li>
@@ -95,15 +87,15 @@ export default function DietPlansPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-14 text-center">
         <h2 className="font-serif text-2xl font-semibold text-foreground sm:text-3xl">
-          Boost your results naturally
+          Support your routine naturally
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-          Combine these diet plans with SehatSlim herbal capsules to control
-          cravings and support fat burning.
+          Pair these diet plans with daily movement, consistent sleep, and
+          herbal lifestyle support for a more balanced approach.
         </p>
         <div className="mt-6">
           <LinkButton href="/product#order" size="lg">
-            Order Now — COD
+            Explore the Product
           </LinkButton>
         </div>
       </section>

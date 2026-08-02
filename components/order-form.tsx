@@ -2,23 +2,25 @@
 
 import { useState } from "react";
 import {
+  ArrowLeft,
   CheckCircle2,
   Loader2,
+  MessageCircle,
   Minus,
   Plus,
   ShieldCheck,
   Truck,
-  ArrowLeft,
-  MessageCircle,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { product } from "@/lib/product";
 import { site } from "@/lib/site";
-import { cn } from "@/lib/utils";
+
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
+
 const MAX_QUANTITY = 10;
 
 export function OrderForm() {
@@ -33,10 +35,10 @@ export function OrderForm() {
   } | null>(null);
 
   const total = product.price * quantity;
-  const freeDelivery = true;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "purchase", {
         currency: "PKR",
@@ -49,11 +51,11 @@ export function OrderForm() {
         ],
       });
     }
+
     setStatus("submitting");
     setMessage("");
 
     const formData = new FormData(e.currentTarget);
-
     const payload = {
       fullName: formData.get("fullName"),
       mobile: formData.get("mobile"),
@@ -89,45 +91,37 @@ export function OrderForm() {
       );
     }
   }
+
   if (status === "success") {
     return (
-      <div className="rounded-3xl border border-primary/30 bg-secondary/50 p-8 text-center shadow-lg">
+      <div className="rounded-[2rem] border border-primary/30 bg-secondary/50 p-8 text-center shadow-lg">
         <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-green-600 text-white shadow-lg">
           <CheckCircle2 className="size-9" />
         </span>
-
         <h2 className="mt-5 text-3xl font-bold text-foreground">
-          🎉 Order Confirmed!
+          Order confirmed
         </h2>
-
         <p className="mt-3 text-sm leading-7 text-muted-foreground">
-          Thank you for your order.
-          <br />
-          Our representative will contact you within{" "}
-          <strong>15–30 minutes</strong> to confirm your order.
-          <br />
-          Please keep your phone available.
+          Thank you for your order. Our representative will contact you within
+          <strong> 15-30 minutes </strong>
+          to confirm delivery details.
         </p>
 
         {summary && (
           <div className="mt-6 rounded-2xl border bg-background p-5 text-left shadow-sm">
-            <h3 className="mb-4 text-lg font-semibold">Order Summary</h3>
-
+            <h3 className="mb-4 text-lg font-semibold">Order summary</h3>
             <div className="flex justify-between border-b pb-2">
               <span>Product</span>
               <span>{product.name}</span>
             </div>
-
             <div className="mt-2 flex justify-between border-b pb-2">
               <span>Quantity</span>
               <span>{summary.quantity}</span>
             </div>
-
             <div className="mt-2 flex justify-between border-b pb-2">
               <span>Payment</span>
               <span>Cash on Delivery</span>
             </div>
-
             <div className="mt-3 flex justify-between text-lg font-bold">
               <span>Total</span>
               <span>
@@ -137,11 +131,11 @@ export function OrderForm() {
           </div>
         )}
 
-        <div className="mt-6 rounded-2xl bg-green-50 p-5 text-left">
-          <p className="mb-2">✅ 100% Original Product</p>
-          <p className="mb-2">🚚 Delivery in 2–4 Working Days</p>
-          <p className="mb-2">💵 Cash on Delivery</p>
-          <p>📞 Our team will call you shortly.</p>
+        <div className="mt-6 rounded-2xl bg-green-50 p-5 text-left text-sm text-green-900">
+          <p className="mb-2">Original product support</p>
+          <p className="mb-2">Delivery in 2-4 working days</p>
+          <p className="mb-2">Cash on Delivery across Pakistan</p>
+          <p>{message || "Our team will call you shortly."}</p>
         </div>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -154,7 +148,6 @@ export function OrderForm() {
             <MessageCircle className="size-5" />
             Chat on WhatsApp
           </a>
-
           <a
             href="/"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-border bg-background px-6 font-semibold transition hover:bg-muted"
@@ -166,45 +159,47 @@ export function OrderForm() {
       </div>
     );
   }
+
   const fieldClass =
     "mt-2 w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20";
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-border bg-card p-6 shadow-xl sm:p-8"
+      className="rounded-[2rem] border border-border bg-card p-6 shadow-xl sm:p-8"
     >
-      <h2 className="text-3xl font-bold text-foreground">
-        Cash on Delivery Order
-      </h2>
-
+      <h2 className="text-3xl font-bold text-foreground">Cash on Delivery order</h2>
       <p className="mt-2 text-sm text-muted-foreground">
-        Fill in your details below and our representative will contact you
-        shortly.
+        Fill in your details below and our representative will contact you to
+        confirm your order before dispatch.
       </p>
 
       <div className="mt-8 space-y-5">
         <div>
-          <label className="text-sm font-semibold">Full Name</label>
-
+          <label htmlFor="fullName" className="text-sm font-semibold">
+            Full name
+          </label>
           <input
             id="fullName"
             name="fullName"
             type="text"
             required
+            autoComplete="name"
             placeholder="Muhammad Ali"
             className={fieldClass}
           />
         </div>
 
         <div>
-          <label className="text-sm font-semibold">Mobile Number</label>
-
+          <label htmlFor="mobile" className="text-sm font-semibold">
+            Mobile number
+          </label>
           <input
             id="mobile"
             name="mobile"
             type="tel"
             required
+            autoComplete="tel"
             inputMode="tel"
             placeholder="03001234567"
             className={fieldClass}
@@ -212,47 +207,49 @@ export function OrderForm() {
         </div>
 
         <div>
-          <label className="text-sm font-semibold">City</label>
-
+          <label htmlFor="city" className="text-sm font-semibold">
+            City
+          </label>
           <input
             id="city"
             name="city"
             type="text"
             required
+            autoComplete="address-level2"
             placeholder="Lahore"
             className={fieldClass}
           />
         </div>
 
         <div>
-          <label className="text-sm font-semibold">Complete Address</label>
-
+          <label htmlFor="address" className="text-sm font-semibold">
+            Complete address
+          </label>
           <textarea
             id="address"
             name="address"
             rows={4}
             required
-            placeholder="House No, Street, Area, Landmark..."
+            autoComplete="street-address"
+            placeholder="House number, street, area, landmark"
             className={cn(fieldClass, "resize-none")}
           />
         </div>
 
         <div>
           <label className="text-sm font-semibold">Quantity</label>
-
-          <div className="mt-3 flex items-center gap-5">
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
             <div className="flex items-center rounded-2xl border">
               <button
                 type="button"
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                 disabled={quantity <= 1}
                 className="flex h-11 w-11 items-center justify-center"
+                aria-label="Decrease quantity"
               >
                 <Minus className="size-4" />
               </button>
-
               <span className="w-12 text-center font-bold">{quantity}</span>
-
               <button
                 type="button"
                 onClick={() =>
@@ -260,11 +257,11 @@ export function OrderForm() {
                 }
                 disabled={quantity >= MAX_QUANTITY}
                 className="flex h-11 w-11 items-center justify-center"
+                aria-label="Increase quantity"
               >
                 <Plus className="size-4" />
               </button>
             </div>
-
             <span className="text-sm text-muted-foreground">
               {site.currency} {product.price.toLocaleString()} each
             </span>
@@ -274,33 +271,23 @@ export function OrderForm() {
         <div className="rounded-2xl bg-secondary/50 p-5">
           <div className="flex justify-between">
             <span>Subtotal</span>
-
             <span className="font-semibold">
               {site.currency} {total.toLocaleString()}
             </span>
           </div>
-
           <div className="mt-3 flex justify-between">
             <span>Delivery</span>
-
-            <span
-              className={
-                freeDelivery ? "font-semibold text-green-600" : "font-semibold"
-              }
-            >
-              FREE
-            </span>
+            <span className="font-semibold text-green-700">Free</span>
           </div>
-
           <div className="mt-4 flex justify-between border-t pt-4 text-lg font-bold">
             <span>Total</span>
-
             <span>
               {site.currency} {total.toLocaleString()}
             </span>
           </div>
         </div>
       </div>
+
       {status === "error" && (
         <div
           className="mt-5 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
@@ -318,28 +305,28 @@ export function OrderForm() {
         {status === "submitting" ? (
           <>
             <Loader2 className="size-5 animate-spin" />
-            Placing Your Order...
+            Placing your order...
           </>
         ) : (
-          "Place Order (Cash on Delivery)"
+          "Place order"
         )}
       </button>
 
-      <div className="mt-6 grid grid-cols-2 gap-4 rounded-2xl bg-secondary/40 p-4 text-sm">
+      <div className="mt-6 grid gap-4 rounded-2xl bg-secondary/40 p-4 text-sm sm:grid-cols-2">
         <div className="flex items-center gap-2">
           <ShieldCheck className="size-5 text-primary" />
-          <span>100% Secure Order</span>
+          <span>Secure order details</span>
         </div>
-
         <div className="flex items-center gap-2">
           <Truck className="size-5 text-primary" />
-          <span>2–4 Days Delivery</span>
+          <span>2-4 working day delivery</span>
         </div>
       </div>
 
       <p className="mt-5 text-center text-xs leading-6 text-muted-foreground">
-        By placing this order, you agree to receive a confirmation call from our
-        team before dispatch. Cash on Delivery is available all over Pakistan.
+        By placing this order, you agree to receive a confirmation call from
+        our team before dispatch. Cash on Delivery is available all over
+        Pakistan.
       </p>
     </form>
   );

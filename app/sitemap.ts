@@ -16,12 +16,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/contact',
     '/privacy-policy',
+    '/refund-policy',
+    '/shipping-policy',
     '/terms',
   ].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: now,
-    changeFrequency: (path === '' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
-    priority: path === '' ? 1 : path === '/product' ? 0.9 : 0.7,
+    changeFrequency: (path === '' || path === '/blog' ? 'weekly' : 'monthly') as
+      | 'weekly'
+      | 'monthly',
+    priority:
+      path === ''
+        ? 1
+        : path === '/product'
+          ? 0.9
+          : path === '/blog'
+            ? 0.85
+            : 0.7,
   }))
 
   const blogRoutes = posts.map((post) => ({

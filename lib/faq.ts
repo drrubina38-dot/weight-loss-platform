@@ -1,34 +1,34 @@
-export type Faq = { question: string; answer: string }
+export type Faq = { question: string; answer: string };
 
 export const faqs: Faq[] = [
   {
-    question: 'Is SehatSlim safe to use?',
+    question: "Is Dr. Rubina Official suitable for daily use?",
     answer:
-      'SehatSlim is made from 100% natural, plant-based herbal ingredients with no harsh stimulants. However, if you are pregnant, nursing, under 18, or have a medical condition, please consult your doctor before use.',
+      "The product is designed to support a healthy lifestyle when used according to the provided instructions. If you are pregnant, nursing, under 18, taking medication, or managing a medical condition, please speak with a qualified healthcare professional before use.",
   },
   {
-    question: 'How long until I see results?',
+    question: "How soon can I expect to notice changes?",
     answer:
-      'Most customers notice reduced cravings and improved energy within the first 1–2 weeks. Visible weight loss usually appears within 4–8 weeks when combined with a balanced diet and light activity.',
+      "Every routine is different. Some people notice better consistency in their eating and activity habits over time, but visible changes depend on factors like diet, movement, sleep, and overall lifestyle. Individual results vary.",
   },
   {
-    question: 'Do you offer Cash on Delivery (COD)?',
+    question: "Do you offer Cash on Delivery?",
     answer:
-      'Yes! We offer Cash on Delivery all across Pakistan. You only pay when the product is delivered to your doorstep — no advance payment required.',
+      "Yes. Cash on Delivery is available across Pakistan, so you can pay when the parcel arrives.",
   },
   {
-    question: 'How much does delivery cost and how long does it take?',
+    question: "How much does delivery cost and how long does it take?",
     answer:
-      'Delivery is free on orders of 2 bottles or more. Standard delivery takes 2–4 working days depending on your city.',
+      "Delivery timelines vary by city, but most orders arrive within 2-4 working days after confirmation.",
   },
   {
-    question: 'Are there any side effects?',
+    question: "Can I use it with my regular diet plan?",
     answer:
-      'SehatSlim is formulated to be gentle and free from jitters. Because it is herbal, side effects are rare, but individual results and reactions may vary.',
+      "Yes. The product is intended to complement balanced meals, hydration, and a healthy daily routine. It should not replace nutritious eating or regular movement.",
   },
   {
-    question: 'Can I take it with my regular diet?',
+    question: "Where can I get extra guidance?",
     answer:
-      'Yes. For the best results we recommend following one of our free desi diet plans and drinking plenty of water alongside the supplement.',
+      "You can explore our blog, BMI calculator, calorie calculator, and diet plans for additional lifestyle support and practical next steps.",
   },
-]
+];

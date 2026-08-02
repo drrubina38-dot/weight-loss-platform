@@ -1,7 +1,6 @@
-import { Leaf, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
-
-import { FaInstagram, FaTiktok } from "react-icons/fa";
 import Link from "next/link";
+import { Leaf, Mail, MapPin, MessageCircle, Phone, ShieldCheck, Truck } from "lucide-react";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { site } from "@/lib/site";
 
 const columns = [
@@ -36,7 +35,7 @@ const columns = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-secondary/40">
+    <footer className="border-t border-border bg-secondary/35">
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
@@ -44,7 +43,6 @@ export function SiteFooter() {
               <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
                 <Leaf className="size-5" />
               </span>
-
               <span className="text-lg font-bold text-foreground">
                 {site.name}
               </span>
@@ -56,15 +54,14 @@ export function SiteFooter() {
 
             <div className="mt-6 space-y-3 text-sm">
               <a
-                href="tel:03048557141"
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
                 className="flex items-center gap-2 hover:text-primary"
               >
                 <Phone className="size-4 text-primary" />
-                0304-8557141
+                {site.phone}
               </a>
-
               <a
-                href="https://wa.me/923048557141"
+                href={`https://wa.me/${site.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-primary"
@@ -72,59 +69,57 @@ export function SiteFooter() {
                 <MessageCircle className="size-4 text-green-600" />
                 WhatsApp Support
               </a>
-
               <a
-                href="mailto:support@drrubinaofficial.site"
+                href={`mailto:${site.email}`}
                 className="flex items-center gap-2 hover:text-primary"
               >
                 <Mail className="size-4 text-primary" />
-                support@drrubinaofficial.site
+                {site.email}
               </a>
-
               <p className="flex items-center gap-2">
                 <MapPin className="size-4 text-primary" />
-                Pakistan
+                {site.address}
               </p>
             </div>
 
             <div className="mt-6 flex items-center gap-4">
               <a
-                href="https://www.instagram.com/drrubina06"
+                href={site.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border p-2 transition hover:bg-pink-100"
+                aria-label="Visit Dr. Rubina Official on Instagram"
               >
                 <FaInstagram className="size-5 text-pink-600" />
               </a>
-
               <a
-                href="https://www.tiktok.com/@drrubina06"
+                href={site.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border p-2 transition hover:bg-gray-100"
+                aria-label="Visit Dr. Rubina Official on TikTok"
               >
                 <FaTiktok className="size-5" />
               </a>
-
               <a
-                href="https://wa.me/923048557141"
+                href={`https://wa.me/${site.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border p-2 transition hover:bg-green-100"
+                aria-label="Chat with Dr. Rubina Official on WhatsApp"
               >
                 <MessageCircle className="size-5 text-green-600" />
               </a>
             </div>
           </div>
 
-          {columns.map((col) => (
-            <div key={col.title}>
-              <h3 className="text-sm font-semibold text-foreground">
-                {col.title}
+          {columns.map((column) => (
+            <div key={column.title}>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground">
+                {column.title}
               </h3>
-
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((link) => (
+                {column.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -139,43 +134,40 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 rounded-2xl border border-border bg-card p-6 text-center md:grid-cols-4">
+        <div className="mt-10 grid gap-4 rounded-[1.75rem] border border-border bg-card p-6 text-center sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h4 className="font-semibold">🚚 Fast Delivery</h4>
+            <Truck className="mx-auto size-5 text-primary" />
+            <h4 className="mt-3 font-semibold">Fast delivery</h4>
             <p className="text-xs text-muted-foreground">Across Pakistan</p>
           </div>
-
           <div>
-            <h4 className="font-semibold">💵 Cash on Delivery</h4>
-            <p className="text-xs text-muted-foreground">Pay After Delivery</p>
+            <ShieldCheck className="mx-auto size-5 text-primary" />
+            <h4 className="mt-3 font-semibold">Cash on Delivery</h4>
+            <p className="text-xs text-muted-foreground">Pay on arrival</p>
           </div>
-
           <div>
-            <h4 className="font-semibold">🌿 Herbal Formula</h4>
-            <p className="text-xs text-muted-foreground">Premium Quality</p>
+            <Leaf className="mx-auto size-5 text-primary" />
+            <h4 className="mt-3 font-semibold">Herbal formula</h4>
+            <p className="text-xs text-muted-foreground">Lifestyle support</p>
           </div>
-
           <div>
-            <h4 className="font-semibold">⭐ Customer Support</h4>
-            <p className="text-xs text-muted-foreground">
-              24/7 WhatsApp Support
-            </p>
+            <MessageCircle className="mx-auto size-5 text-primary" />
+            <h4 className="mt-3 font-semibold">Customer support</h4>
+            <p className="text-xs text-muted-foreground">WhatsApp assistance</p>
           </div>
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} {site.name}. All Rights Reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-
-          <p className="mt-2">Cash on Delivery Available All Over Pakistan.</p>
-
-          <p className="mt-3 max-w-3xl mx-auto leading-6">
+          <p className="mt-2">Cash on Delivery available all over Pakistan.</p>
+          <p className="mx-auto mt-3 max-w-3xl leading-6">
             Disclaimer: This herbal supplement is intended to support a healthy
-            lifestyle. Individual results may vary depending on diet, exercise
-            and body condition. Please consult your healthcare professional
-            before use if you are pregnant, nursing or have any medical
-            condition.
+            lifestyle. Individual results vary based on diet, activity, sleep,
+            and other personal factors. Please consult a healthcare
+            professional before use if you are pregnant, nursing, taking
+            medication, or managing a medical condition.
           </p>
         </div>
       </div>
