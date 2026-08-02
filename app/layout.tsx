@@ -83,6 +83,9 @@ export default function RootLayout({
       lang="en"
       className={`light ${dmSans.variable} ${fraunces.variable} bg-background`}
     >
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-1554402367237634" />
+      </head>
       <body className="font-sans antialiased">
         <JsonLd
           data={{
