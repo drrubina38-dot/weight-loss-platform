@@ -12,10 +12,12 @@
     "@base-ui/react": "^1.5.0",
     "@supabase/supabase-js": "^2.111.0",
     "@vercel/analytics": "^1.6.1",
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.542.0",
     "next": "16.2.6",
+    "qrcode-terminal": "^0.12.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.7.0",
@@ -40,5 +42,22 @@
   },
   "overrides": {
     "hono": "4.12.25"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drrubina38-dot/weight-loss-platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/drrubina38-dot/weight-loss-platform/issues"
+  },
+  "homepage": "https://github.com/drrubina38-dot/weight-loss-platform#readme"
 }
