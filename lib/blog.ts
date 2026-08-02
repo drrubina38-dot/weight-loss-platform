@@ -665,6 +665,116 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "weight-loss-after-pregnancy-safe-tips",
+    title: "Weight Loss After Pregnancy: Safe Tips for New Mothers",
+    excerpt:
+      "Learn safe and practical ways to lose weight after pregnancy with healthy eating, gentle exercise and sustainable lifestyle habits.",
+    category: "Weight Loss",
+    date: "2026-08-04",
+    readTime: "8 min read",
+    author: "SehatSlim Team",
+    content: [
+      {
+        body: [
+          "After pregnancy, many mothers want to return to a healthy weight, but it is important to approach weight loss with patience and care. Your body needs time to recover after childbirth, and focusing on overall health is more important than rapid weight loss.",
+          "This guide shares practical tips for new mothers who want to lose weight safely while maintaining energy levels and supporting their daily routine.",
+        ],
+      },
+
+      {
+        heading: "Give Your Body Time to Recover",
+        body: [
+          "Every pregnancy and delivery is different. Many healthcare professionals recommend allowing your body adequate time to recover before starting a structured weight-loss routine. If you have recently given birth or had a medical procedure, follow your healthcare provider’s advice before making major changes to your diet or activity level.",
+        ],
+      },
+
+      {
+        heading: "Eat Balanced Meals",
+        body: [
+          "Choose meals that include lean protein, vegetables, fruits, whole grains and healthy fats. Avoid skipping meals, as doing so may leave you feeling tired and increase the likelihood of overeating later in the day.",
+        ],
+      },
+
+      {
+        heading: "Stay Hydrated",
+        body: [
+          "Drink enough water throughout the day. Proper hydration supports overall health and may also help reduce unnecessary snacking caused by confusing thirst with hunger.",
+        ],
+      },
+
+      {
+        heading: "Start With Gentle Exercise",
+        body: [
+          "Begin with light activities such as walking, stretching or other gentle movements if they are appropriate for your stage of recovery. Increase activity gradually instead of trying intense workouts immediately.",
+        ],
+      },
+      {
+        heading: "Choose Healthy Snacks",
+        body: [
+          "Instead of processed snacks, choose healthier options such as fresh fruit, plain yogurt, boiled eggs, roasted chickpeas or a small handful of nuts. These foods provide nutrients while helping you stay satisfied between meals.",
+        ],
+      },
+
+      {
+        heading: "Sleep Whenever Possible",
+        body: [
+          "Sleep can be challenging with a newborn, but getting enough rest whenever possible supports overall wellbeing. Poor sleep may increase cravings and make healthy eating more difficult.",
+        ],
+      },
+
+      {
+        heading: "Manage Stress in Healthy Ways",
+        body: [
+          "Adjusting to life with a new baby can be stressful. Gentle walks, spending time with family, relaxation techniques and asking for support when needed can help reduce stress and support healthy habits.",
+        ],
+      },
+
+      {
+        heading: "Breastfeeding and Nutrition",
+        body: [
+          "If you are breastfeeding, focus on eating a balanced diet and staying well hydrated. Weight-loss goals should never compromise your nutritional needs or your baby’s wellbeing. If you have questions about your diet while breastfeeding, seek guidance from a qualified healthcare professional.",
+        ],
+      },
+
+      {
+        heading: "Common Mistakes to Avoid",
+        body: [
+          "Avoid crash diets, skipping meals or starting intense exercise too soon after delivery. These approaches are difficult to maintain and may interfere with recovery. Long-term healthy habits are generally more effective than quick fixes.",
+        ],
+      },
+
+      {
+        heading: "Be Patient With Your Progress",
+        body: [
+          "Every mother recovers at a different pace. Comparing your progress with others can be discouraging. Focus on steady improvements in your eating habits, activity levels and overall health rather than the number on the scale.",
+        ],
+      },
+      {
+        heading: "Frequently Asked Questions",
+        body: [
+          "When can I start trying to lose weight after pregnancy? The right time varies for every mother. Follow your healthcare provider’s advice before beginning a structured weight-loss plan.",
+          "Can I exercise every day? Gentle daily activity may be suitable for many people, but the type and intensity of exercise should match your recovery stage and overall health.",
+          "How quickly should I expect results? Healthy weight management is a gradual process. Focus on consistent habits rather than rapid weight loss.",
+        ],
+      },
+
+      {
+        heading: "Healthy Daily Routine for New Mothers",
+        body: [
+          "Start your morning with a nutritious breakfast, drink water regularly, include protein in every meal, take short walks when possible and prioritise rest whenever your baby is sleeping. Small daily habits often lead to meaningful long-term improvements.",
+        ],
+      },
+
+      {
+        heading: "Final Thoughts",
+        body: [
+          "Losing weight after pregnancy should never feel like a race. A balanced diet, gentle physical activity, good hydration and patience are the foundations of healthy progress. Celebrate small improvements and give your body the time it needs to recover.",
+          "If you are looking for additional support as part of a healthy lifestyle, you can also learn more about Dr Rubina Phaki. It is designed to complement healthy eating and regular physical activity, not replace them. Individual results vary, and maintaining healthy habits remains the most important part of long-term weight management.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string) {
