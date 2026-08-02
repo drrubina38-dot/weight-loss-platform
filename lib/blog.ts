@@ -541,6 +541,130 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "best-pakistani-diet-plan-for-weight-loss",
+    title: "Best Pakistani Diet Plan for Weight Loss (7-Day Meal Plan)",
+    excerpt:
+      "Follow this simple 7-day Pakistani diet plan for healthy and sustainable weight loss using affordable local foods and balanced nutrition.",
+    category: "Healthy Eating",
+    date: "2026-08-03",
+    readTime: "9 min read",
+    author: "SehatSlim Team",
+    content: [
+      {
+        body: [
+          "Many people believe they must stop eating Pakistani food to lose weight. The truth is that weight loss is possible while enjoying traditional meals. The key is choosing balanced portions, cooking with less oil and building healthy daily habits.",
+          "This seven-day Pakistani meal plan is designed for beginners who want practical ideas using foods commonly available across Pakistan. It focuses on consistency, balanced nutrition and sustainable lifestyle changes rather than extreme dieting.",
+        ],
+      },
+
+      {
+        heading: "General Guidelines Before You Start",
+        body: [
+          "Drink 8 to 10 glasses of water every day, include protein in every meal, avoid sugary drinks, choose whole foods whenever possible and stay physically active for at least 30 minutes daily.",
+        ],
+      },
+
+      {
+        heading: "Day 1",
+        body: [
+          "Breakfast: Two boiled eggs with one whole wheat roti and a cup of unsweetened tea.",
+          "Lunch: Grilled chicken with mixed salad and one whole wheat roti.",
+          "Dinner: Lentil curry (daal) with cooked vegetables and a small roti.",
+        ],
+      },
+
+      {
+        heading: "Day 2",
+        body: [
+          "Breakfast: Plain yogurt with oats and seasonal fruit.",
+          "Lunch: Chicken vegetable soup with one whole wheat roti.",
+          "Dinner: Grilled fish with cucumber and tomato salad.",
+        ],
+      },
+
+      {
+        heading: "Day 3",
+        body: [
+          "Breakfast: Vegetable omelette with one slice of whole wheat bread.",
+          "Lunch: Chickpea salad with fresh vegetables.",
+          "Dinner: Spinach (palak) with grilled chicken and a small roti.",
+        ],
+      },
+      {
+        heading: "Day 4",
+        body: [
+          "Breakfast: A bowl of oatmeal with a handful of almonds.",
+          "Lunch: Grilled chicken tikka with fresh salad.",
+          "Dinner: Mixed vegetable curry with one whole wheat roti.",
+        ],
+      },
+
+      {
+        heading: "Day 5",
+        body: [
+          "Breakfast: Plain yogurt with apple slices.",
+          "Lunch: Daal with cucumber salad and one whole wheat roti.",
+          "Dinner: Grilled fish with steamed vegetables.",
+        ],
+      },
+
+      {
+        heading: "Day 6",
+        body: [
+          "Breakfast: Two boiled eggs and a cup of green tea.",
+          "Lunch: Chicken salad with olive oil and lemon dressing.",
+          "Dinner: Lauki or tinda cooked with less oil and one small roti.",
+        ],
+      },
+
+      {
+        heading: "Day 7",
+        body: [
+          "Breakfast: Vegetable omelette with tomatoes and cucumbers.",
+          "Lunch: Brown rice with grilled chicken and vegetables.",
+          "Dinner: Lentil soup with mixed salad.",
+        ],
+      },
+
+      {
+        heading: "Healthy Snack Ideas",
+        body: [
+          "Choose healthy snacks such as fresh fruit, roasted chickpeas, plain yogurt, a handful of almonds or walnuts, cucumber slices or boiled eggs instead of biscuits, chips and sugary snacks.",
+        ],
+      },
+
+      {
+        heading: "Foods to Limit",
+        body: [
+          "Reduce sugary drinks, bakery products, deep-fried foods, excessive sweets and oversized portions. These foods can make it harder to maintain a calorie deficit.",
+        ],
+      },
+      {
+        heading: "Frequently Asked Questions",
+        body: [
+          "Can I eat roti during weight loss? Yes. Whole wheat roti can be included in a balanced diet when eaten in appropriate portions.",
+          "Can I eat rice? Yes. Brown rice or a small serving of white rice can fit into a healthy eating plan if your overall calorie intake is balanced.",
+          "How much weight can I lose in one month? Healthy and sustainable weight loss varies from person to person. Focus on building consistent habits instead of expecting rapid results.",
+        ],
+      },
+
+      {
+        heading: "Tips for Better Results",
+        body: [
+          "Walk for at least 30 to 45 minutes daily, drink enough water, avoid eating late at night, sleep for 7 to 8 hours and remain consistent with your meal plan. Small improvements maintained over time often produce the best long-term results.",
+        ],
+      },
+
+      {
+        heading: "Final Thoughts",
+        body: [
+          "A healthy Pakistani diet does not require expensive foods or complicated recipes. By choosing balanced meals, controlling portion sizes and staying physically active, you can work toward your weight management goals while still enjoying traditional Pakistani cuisine.",
+          "If you are looking for additional support alongside healthy eating and exercise, you can also learn more about Dr Rubina Phaki. It is intended to complement a healthy lifestyle and should not be considered a replacement for a balanced diet or regular physical activity.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string) {
