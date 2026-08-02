@@ -100,6 +100,12 @@ export default function RootLayout({
             },
           }}
         />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1554402367237634"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
