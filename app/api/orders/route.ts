@@ -10,7 +10,7 @@ type OrderInput = {
   quantity?: number | string;
 };
 
-const MAX_QUANTITY = 10;
+const ALLOWED_QUANTITIES = [2, 4, 6, 8] as const;
 async function saveOrder(order: {
   fullName: string;
   mobile: string;
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
   const mobile = String(body.mobile ?? "").trim();
   const city = String(body.city ?? "").trim();
   const address = String(body.address ?? "").trim();
-  const quantity = Number(body.quantity ?? 1);
+  const quantity = Number(body.quantity ?? 2);
 
   const errors: string[] = [];
 
@@ -91,8 +91,11 @@ export async function POST(request: Request) {
   if (address.length < 10)
     errors.push("Please enter your complete delivery address.");
 
-  if (!Number.isInteger(quantity) || quantity < 1 || quantity > MAX_QUANTITY) {
-    errors.push(`Quantity must be between 1 and ${MAX_QUANTITY}.`);
+  if (
+    !Number.isInteger(quantity) ||
+    !ALLOWED_QUANTITIES.includes(quantity as 2 | 4 | 6 | 8)
+  ) {
+    errors.push("Quantity must be 2, 4, 6, or 8.");
   }
 
   if (errors.length > 0) {

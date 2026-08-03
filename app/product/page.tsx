@@ -76,14 +76,16 @@ const relatedPosts = posts
   .slice(0, 3);
 
 export const metadata: Metadata = {
-  title: "Dr Rubina Herbal Weight Loss Powder | Official Product Page",
+  title:
+    "Buy 1 Get 1 Free | Dr Rubina Herbal Weight Loss Powder | Official Product Page",
   description:
     "Explore ingredients, usage guidance, FAQs, and Cash on Delivery details for Dr Rubina Herbal Weight Loss Powder in Pakistan.",
   alternates: {
     canonical: `${site.url}/product`,
   },
   openGraph: {
-    title: "Dr Rubina Herbal Weight Loss Powder | Official Product Page",
+    title:
+      "Buy 1 Get 1 Free | Dr Rubina Herbal Weight Loss Powder | Official Product Page",
     description:
       "Product details, herbal ingredients, delivery information, and official ordering support from Dr. Rubina Official.",
     url: `${site.url}/product`,
@@ -185,7 +187,7 @@ export default function ProductPage() {
               Dr. Rubina Official
             </span>
             <h1 className="mt-3 text-balance font-serif text-3xl font-semibold text-foreground sm:text-4xl">
-              {product.name}
+              Buy 1 Get 1 Free | {product.name}
             </h1>
             <div className="mt-3 flex flex-wrap items-center gap-3">
               <StarRating rating={product.rating} />

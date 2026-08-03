@@ -21,10 +21,11 @@ declare global {
   }
 }
 
-const MAX_QUANTITY = 10;
+const QUANTITY_OPTIONS = [2, 4, 6, 8] as const;
 
 export function OrderForm() {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] =
+    useState<(typeof QUANTITY_OPTIONS)[number]>(2);
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
@@ -34,8 +35,7 @@ export function OrderForm() {
     total: number;
   } | null>(null);
 
-  const total = product.price * quantity;
-
+  const total = (quantity / 2) * product.price;
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -168,7 +168,9 @@ export function OrderForm() {
       onSubmit={handleSubmit}
       className="rounded-[2rem] border border-border bg-card p-6 shadow-xl sm:p-8"
     >
-      <h2 className="text-3xl font-bold text-foreground">Cash on Delivery order</h2>
+      <h2 className="text-3xl font-bold text-foreground">
+        Cash on Delivery order
+      </h2>
       <p className="mt-2 text-sm text-muted-foreground">
         Fill in your details below and our representative will contact you to
         confirm your order before dispatch.
@@ -237,34 +239,35 @@ export function OrderForm() {
         </div>
 
         <div>
-          <label className="text-sm font-semibold">Quantity</label>
-          <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <div className="flex items-center rounded-2xl border">
-              <button
-                type="button"
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                disabled={quantity <= 1}
-                className="flex h-11 w-11 items-center justify-center"
-                aria-label="Decrease quantity"
-              >
-                <Minus className="size-4" />
-              </button>
-              <span className="w-12 text-center font-bold">{quantity}</span>
-              <button
-                type="button"
-                onClick={() =>
-                  setQuantity((q) => Math.min(MAX_QUANTITY, q + 1))
-                }
-                disabled={quantity >= MAX_QUANTITY}
-                className="flex h-11 w-11 items-center justify-center"
-                aria-label="Increase quantity"
-              >
-                <Plus className="size-4" />
-              </button>
-            </div>
-            <span className="text-sm text-muted-foreground">
+          <label htmlFor="quantity" className="text-sm font-semibold">
+            Quantity
+          </label>
+          <div className="mt-3">
+            <select
+              id="quantity"
+              name="quantity"
+              className={cn(fieldClass, "max-w-xs")}
+              value={quantity}
+              onChange={(event) =>
+                setQuantity(
+                  Number(
+                    event.target.value,
+                  ) as (typeof QUANTITY_OPTIONS)[number],
+                )
+              }
+            >
+              {QUANTITY_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Select quantity in pairs: 2, 4, 6, or 8.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
               {site.currency} {product.price.toLocaleString()} each
-            </span>
+            </p>
           </div>
         </div>
 
@@ -324,9 +327,8 @@ export function OrderForm() {
       </div>
 
       <p className="mt-5 text-center text-xs leading-6 text-muted-foreground">
-        By placing this order, you agree to receive a confirmation call from
-        our team before dispatch. Cash on Delivery is available all over
-        Pakistan.
+        By placing this order, you agree to receive a confirmation call from our
+        team before dispatch. Cash on Delivery is available all over Pakistan.
       </p>
     </form>
   );
