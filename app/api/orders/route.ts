@@ -110,7 +110,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const total = (product?.price ?? 0) * quantity;
+  const total = ((product?.price ?? 0) * quantity) / 2;
 
   const order = {
     fullName,
