@@ -172,6 +172,14 @@ export default function RootLayout({
             gtag('config', 'G-ZVQS8MYYYJ');
           `}
         </Script>
+        {/* Monetag */}
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="266895"
+          strategy="afterInteractive"
+          async
+          data-cfasync="false"
+        />
       </body>
     </html>
   );
