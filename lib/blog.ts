@@ -1272,6 +1272,413 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "pakistani-diet-plan-for-weight-loss",
+    title: "Pakistani Diet Plan for Weight Loss: Local Meals That Work",
+    excerpt:
+      "A practical Pakistani diet plan for weight loss using local foods, balanced meals, and simple daily habits to help you lose weight without giving up desi favourites.",
+    category: "Healthy Eating",
+    date: "2026-08-05",
+    readTime: "12 min read",
+    author: "SehatSlim Team",
+    content: [
+      {
+        body: [
+          "This Pakistani diet plan for weight loss is built to work with familiar local foods, realistic portions, and easy lifestyle habits. It does not ask you to stop eating desi meals — it shows you how to make them healthier and more satisfying.",
+          "The goal is steady, sustainable progress using foods commonly available across Pakistan. A healthier routine can support belly fat reduction, better energy, stronger digestion, and weight loss that lasts.",
+        ],
+      },
+      {
+        heading: "Why this plan works",
+        body: [
+          "Many people think weight loss requires giving up Pakistani food. The truth is that you can lose weight while still enjoying roti, daal, sabzi, and dahi. The key is choosing better cooking methods, controlling portions, and balancing your plate.",
+          "This plan blends protein, fiber, vegetables, and whole grains in ways that support appetite control and steady energy. It also includes simple habits for hydration, walking, and meal timing.",
+        ],
+      },
+      {
+        heading: "How to use the plan",
+        body: [
+          "Start by checking your target calories with the [Calorie Calculator](/calorie-calculator) and your healthy weight range using the [BMI Calculator](/bmi-calculator). These tools help you adjust portions to your current needs.",
+          "Follow the sample 7-day meal plan, swap similar foods when needed, and focus on consistency. The plan is flexible: use the same structure with seasonal vegetables, local fruits, and foods you already enjoy.",
+        ],
+      },
+      {
+        heading: "Sample 7-day Pakistani diet plan",
+        body: [
+          "Use this week as a template. Adjust portion sizes for your calorie goal, but keep the overall balance of vegetables, protein, whole grains, and healthy snacks.",
+        ],
+      },
+      {
+        heading: "Day 1",
+        body: [
+          "Breakfast: Two boiled eggs, cucumber slices, and one small whole wheat roti.",
+          "Snack: One apple.",
+          "Lunch: One cup of moong daal, mixed vegetable sabzi, and one small portion of brown rice.",
+          "Snack: One cup plain yogurt with a pinch of roasted cumin.",
+          "Dinner: Grilled chicken tikka, fresh salad, and one small roti.",
+        ],
+      },
+      {
+        heading: "Day 2",
+        body: [
+          "Breakfast: Oats porridge with chopped banana and a few almonds.",
+          "Snack: One orange.",
+          "Lunch: Chickpea chana salad with onion, tomato, coriander, and lemon juice.",
+          "Snack: One small bowl of boiled chana.",
+          "Dinner: Spinach paneer curry with one small whole wheat roti.",
+        ],
+      },
+      {
+        heading: "Day 3",
+        body: [
+          "Breakfast: Two-egg omelette with tomatoes and spinach.",
+          "Snack: One pear.",
+          "Lunch: Vegetable soup, one small whole wheat roti, and salad.",
+          "Snack: One cup plain dahi.",
+          "Dinner: Grilled fish with steamed broccoli and cucumber raita.",
+        ],
+      },
+      {
+        heading: "Day 4",
+        body: [
+          "Breakfast: Broken wheat (dalia) cooked with water and topped with walnuts.",
+          "Snack: One bowl of papaya.",
+          "Lunch: Chicken vegetable stew with one small brown rice portion.",
+          "Snack: One handful of roasted peanuts.",
+          "Dinner: Tandoori chicken with mixed salad and one small roti.",
+        ],
+      },
+      {
+        heading: "Day 5",
+        body: [
+          "Breakfast: Plain yogurt with sliced apple and a sprinkle of chia seeds.",
+          "Snack: One kiwi or seasonal fruit.",
+          "Lunch: Daal with cucumber salad and one small whole wheat roti.",
+          "Snack: Cucumber sticks with lemon.",
+          "Dinner: Grilled fish with steamed vegetables.",
+        ],
+      },
+      {
+        heading: "Day 6",
+        body: [
+          "Breakfast: Besan chilla with coriander and onion.",
+          "Snack: One bowl of watermelon.",
+          "Lunch: Rajma curry with one small roti and salad.",
+          "Snack: One cup green tea and a few almonds.",
+          "Dinner: Chicken soup with mixed vegetable salad.",
+        ],
+      },
+      {
+        heading: "Day 7",
+        body: [
+          "Breakfast: Vegetable omelette with tomatoes and cucumbers.",
+          "Snack: One apple.",
+          "Lunch: Brown rice with grilled chicken and vegetables.",
+          "Snack: One cup buttermilk.",
+          "Dinner: Lentil soup with mixed salad.",
+        ],
+      },
+      {
+        heading: "Healthy snacking and beverage choices",
+        body: [
+          "Choose snacks like fresh fruit, roasted chickpeas, boiled eggs, plain dahi, and a small handful of nuts. Avoid sugary drinks, packaged juices, and high-calorie fried snacks.",
+          "Drink water consistently throughout the day and replace sweet tea with green tea or unsweetened herbal tea when possible.",
+        ],
+      },
+      {
+        heading: "How to lose belly fat with this diet",
+        body: [
+          "To reduce belly fat, keep the focus on whole foods, fiber, protein, and portion control. Avoid late-night heavy meals and choose lighter dinners with more vegetables and lean protein.",
+          "Pair this diet with daily walking, gentle home workouts, and better sleep to improve overall body fat loss and waistline reduction.",
+        ],
+      },
+      {
+        heading: "Common mistakes to avoid",
+        body: [
+          "Avoid crash dieting, skipping meals, and relying on too many fried foods or sugary treats. These habits can slow progress and make weight loss harder to maintain.",
+          "Do not compare yourself to others. Healthy weight loss is personal, and slow, steady changes are more sustainable than quick fixes.",
+        ],
+      },
+      {
+        heading: "Tips for long-term success",
+        body: [
+          "Plan your meals ahead, keep healthy options visible, walk after lunch or dinner, and make sleep a priority. Small changes repeated over weeks are the foundation of lasting success.",
+          "Use the [Diet Plans](/diet-plans) page for more meal ideas and the [Product Page](/product) if you want herbal support to complement your diet and lifestyle habits.",
+        ],
+      },
+      {
+        heading: "Final takeaway",
+        body: [
+          "A Pakistani diet plan for weight loss can be practical, affordable, and satisfying when built around local food and balanced meals. Stay consistent with the sample plan, adjust it to your preferences, and support it with walking, hydration, and better sleep.",
+          "This is not a perfect diet; it is a realistic one. Keep improving your habits one day at a time, and the results will follow.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "best-foods-for-high-blood-pressure",
+    title: "Best Foods for High Blood Pressure Backed by Science",
+    excerpt:
+      "Discover the best foods for high blood pressure with a science-backed diet plan, practical Pakistani meal ideas, and habits that support healthier blood pressure long-term.",
+    category: "Nutrition",
+    date: "2026-08-05",
+    readTime: "20 min read",
+    author: "Dr. Rubina Official Editorial Team",
+    content: [
+      {
+        body: [
+          "If you have high blood pressure, food is one of the most powerful tools you can use alongside medical care. This article explains the best foods for high blood pressure, why they work, and how to build meals that support heart health.",
+          "The guidance is based on research-backed principles and designed for real life in Pakistan. It includes practical meal ideas, everyday habits, and safe strategies to improve blood pressure while keeping your diet simple and satisfying.",
+        ],
+      },
+      {
+        heading: "Why this food plan matters",
+        body: [
+          "High blood pressure is a common concern that increases the risk of heart disease, stroke, kidney problems, and diabetes. Food choices do not cure hypertension, but they can reduce risk and make treatment more effective.",
+          "A diet rich in vegetables, fruits, whole grains, lean protein, and healthy fats helps support healthy blood vessel function, lower inflammation, and manage weight — all of which matter for blood pressure control.",
+        ],
+      },
+      {
+        heading: "Table of contents",
+        body: [
+          "- What causes high blood pressure?",
+          "- How food affects blood pressure",
+          "- 15 best foods for managing hypertension",
+          "- Practical Pakistani meal ideas",
+          "- Sample weekly menu",
+          "- Smart snack and beverage swaps",
+          "- Lifestyle habits to support diet",
+          "- Common mistakes and expert tips",
+          "- FAQ and summary",
+        ],
+      },
+      {
+        heading: "What causes high blood pressure?",
+        body: [
+          "Blood pressure depends on how hard your heart pushes blood through your vessels and how wide your arteries are. When those pressures stay too high, it stresses your cardiovascular system.",
+          "Common causes include excess sodium intake, low potassium, obesity, stress, physical inactivity, poor sleep, and excessive caffeine or alcohol. Genetics also plays a role, but diet and lifestyle are still very influential.",
+        ],
+      },
+      {
+        heading: "How food affects your blood pressure",
+        body: [
+          "Certain foods raise blood pressure by increasing fluid retention or causing artery stiffness, while others help lower pressure through potassium, magnesium, antioxidants, and fiber.",
+          "Choosing the right foods can also support healthy weight loss and reduce body fat, which is one of the strongest lifestyle changes for improving hypertension.",
+        ],
+      },
+      {
+        heading: "The most important nutrition rules",
+        body: [
+          "Focus on whole, minimally processed foods instead of packaged or restaurant meals loaded with salt and unhealthy fats.",
+          "Aim for more vegetables, beans, lentils, whole grains, lean protein, healthy oils, and fresh fruit. These foods support blood pressure without making meals feel restrictive.",
+        ],
+      },
+      {
+        heading: "Food 1: Leafy greens",
+        body: [
+          "Leafy greens like spinach, methi, kale, and mustard greens are rich in potassium and magnesium. These minerals help balance sodium and support blood vessel health.",
+          "Use them in vegetable curries, omelettes, salads, and simple stir-fries. A spinach sabzi or methi paratha with controlled oil can be a heart-friendly choice.",
+        ],
+      },
+      {
+        heading: "Food 2: Berries and seasonal fruit",
+        body: [
+          "Berries such as strawberries, blueberries, and raspberries contain flavonoids linked to improved artery function. Seasonal fruits like citrus, pomegranate, and papaya also support blood pressure control.",
+          "Keep fruit as a snack or a fresh dessert. Avoid fruit juices with added sugar and choose whole fruit to benefit from fiber and slow sugar absorption.",
+        ],
+      },
+      {
+        heading: "Food 3: Beans and lentils",
+        body: [
+          "Lentils, moong daal, chana, and rajma are low in sodium when cooked at home and high in fiber and plant protein. They help keep you full, stable, and less likely to overeat salty snacks.",
+          "A bowl of daal with vegetables is a classic control meal for blood pressure. Make it with less oil and more spices like turmeric, cumin, and coriander.",
+        ],
+      },
+      {
+        heading: "Food 4: Whole grains",
+        body: [
+          "Whole wheat roti, brown rice, oats, broken wheat (dalia), and barley provide more fiber and nutrients than refined flour. Fiber helps support healthy blood sugar and weight, which indirectly helps blood pressure.",
+          "If you eat rice, choose brown rice or a smaller portion of white rice with extra vegetables and protein. The focus is on a balanced plate, not eliminating grains completely.",
+        ],
+      },
+      {
+        heading: "Food 5: Low-fat dairy",
+        body: [
+          "Plain yogurt, buttermilk, and low-fat milk are good sources of calcium and protein. Calcium may support healthy blood vessel contraction and relaxation.",
+          "Use plain dahi in raitas, smoothies, or as a breakfast side. Avoid sweetened yogurt or high-fat dairy desserts that add unnecessary calories and sugar.",
+        ],
+      },
+      {
+        heading: "Food 6: Nuts and seeds",
+        body: [
+          "Almonds, walnuts, flaxseeds, and pumpkin seeds offer healthy fats, magnesium, and fiber. A small handful provides a nutritious snack that supports heart health.",
+          "Keep portions to one small handful, because nuts are calorie-dense. Add seeds to salads, dahi, or oatmeal for extra texture and nutrition.",
+        ],
+      },
+      {
+        heading: "Food 7: Fatty fish",
+        body: [
+          "Salmon, rohu, pomfret, and other fatty fish provide omega-3 fats that support healthy blood vessels and reduce inflammation. Eating fish twice per week is a strong habit for heart health.",
+          "Grill, bake, or steam fish with mild spices and lemon instead of frying. Even a simple fish curry with less oil can be a better choice than heavily fried options.",
+        ],
+      },
+      {
+        heading: "Food 8: Garlic, onion and ginger",
+        body: [
+          "Garlic and onion contain compounds that may help widen blood vessels and support circulation. Ginger has anti-inflammatory effects and adds gentle heat to meals.",
+          "Add these aromatics to curries, soups, and stews. They enhance flavour so you can use less salt while keeping dishes satisfying.",
+        ],
+      },
+      {
+        heading: "Food 9: Tomatoes",
+        body: [
+          "Tomatoes are rich in potassium and lycopene, which help support healthy arteries. They can be eaten fresh, cooked, or as part of a vegetable curry.",
+          "A simple tomato salad or tomato-based dal is a good way to include this food without extra salt. Avoid bottled sauces that often contain added sodium.",
+        ],
+      },
+      {
+        heading: "Food 10: Beets",
+        body: [
+          "Beets contain nitrates that may improve blood flow and support healthy blood pressure. They work best when consumed regularly in small amounts.",
+          "Try roasted beetroot salad, beet juice diluted with water, or beet added to soups. Avoid heavily sweetened juices and stick to whole or lightly cooked beets.",
+        ],
+      },
+      {
+        heading: "Food 11: Citrus fruits",
+        body: [
+          "Oranges, lemons, and sweet limes are high in vitamin C and potassium. They also provide a refreshing way to flavour water and meals.",
+          "Squeeze lemon over salads or steamed vegetables, and choose whole citrus fruits rather than sugary processed drinks.",
+        ],
+      },
+      {
+        heading: "Food 12: Green tea",
+        body: [
+          "Green tea contains polyphenols that support vascular health and antioxidant protection. Drinking one or two cups daily can be a healthier alternative to sugary chai.",
+          "Avoid adding sugar and keep the tea mild if you are sensitive to caffeine. Green tea complements a blood pressure-friendly diet by supporting hydration and gentle metabolism.",
+        ],
+      },
+      {
+        heading: "Food 13: Dark chocolate",
+        body: [
+          "Small portions of dark chocolate with at least 70% cocoa offer flavonoids that can support artery function. It should be an occasional treat, not a daily staple.",
+          "A single square after a meal is enough. Too much chocolate adds extra sugar and calories, which can counteract the benefits.",
+        ],
+      },
+      {
+        heading: "Food 14: Healthy oils",
+        body: [
+          "Olive oil, mustard oil, and canola oil provide better fats than shortening or hydrogenated oils. These fats support healthy cholesterol levels and help reduce inflammation.",
+          "Use oil sparingly for cooking and dress salads with a light hand. Avoid deep frying and choose grilled, baked, or steamed preparations when possible.",
+        ],
+      },
+      {
+        heading: "Food 15: Spices and herbs",
+        body: [
+          "Turmeric, cinnamon, cumin, coriander, and black pepper add flavor without sodium. Some of these spices also have mild anti-inflammatory properties.",
+          "Use them freely in curries, dals, soups, and sabzis to make food delicious while reducing the need for added salt.",
+        ],
+      },
+      {
+        heading: "How to build a blood pressure-friendly plate",
+        body: [
+          "Aim for half your plate to be vegetables, one quarter to be lean protein or legumes, and one quarter to be whole grains or starchy vegetables.",
+          "This structure helps manage calories, supports stable blood sugar, and delivers the minerals important for healthy blood pressure.",
+        ],
+      },
+      {
+        heading: "Practical Pakistani meal ideas",
+        body: [
+          "Breakfast: plain dahi with sliced banana and a sprinkle of walnuts, or oats porridge with berries and a dash of cinnamon.",
+          "Lunch: moong daal with spinach sabzi, a small portion of brown rice, and cucumber-tomato salad with lemon.",
+          "Dinner: grilled fish with roasted beet and tomato salad, or chicken stew with mixed vegetables and one small whole wheat roti.",
+        ],
+      },
+      {
+        heading: "Sample weekly menu",
+        body: [
+          "Monday: vegetable omelette, dal with mixed sabzi and brown rice, and grilled chicken with salad.",
+          "Wednesday: plain yogurt with fruit, rajma salad with greens, and baked fish with steamed vegetables.",
+          "Friday: overnight oats with nut topping, chana curry with roti, and a spinach and tomato stir-fry with lean chicken.",
+        ],
+      },
+      {
+        heading: "Smart snacks and beverages",
+        body: [
+          "Choose snacks like roasted chana, unsalted nuts, cucumber slices, carrot sticks, or a small bowl of plain dahi. These options provide nutrition without excess salt.",
+          "Sip water throughout the day. Replace sugary drinks with green tea, lemon water, or buttermilk. Avoid packaged juices, sodas, and extra-sweetened chai.",
+        ],
+      },
+      {
+        heading: "Grocery list for blood pressure health",
+        body: [
+          "Stock leafy greens, tomatoes, beans, lentils, whole wheat flour, brown rice, oats, plain yogurt, fresh fruit, nuts, and healthy oils.",
+          "Also keep garlic, onion, ginger, turmeric, cumin, coriander, and lemon on hand. These ingredients make blood pressure-friendly cooking simpler and more flavorful.",
+        ],
+      },
+      {
+        heading: "Eating out with high blood pressure",
+        body: [
+          "Order grilled or steamed dishes instead of fried items. Ask for sauces and dressings on the side so you can control salt and oil.",
+          "Avoid heavy tandoori breads and creamy curries when possible. Choose a kebab or grilled fish with salad as a safer restaurant option.",
+        ],
+      },
+      {
+        heading: "Lifestyle habits that support diet",
+        body: [
+          "Walking for 30 minutes a day is one of the best lifestyle habits for blood pressure. It improves circulation, supports weight, and reduces stress.",
+          "Sleep 7 to 8 hours per night and manage stress with breathing exercises, prayer, or short mindful breaks. Stress and poor sleep both raise blood pressure and make healthy eating harder.",
+        ],
+      },
+      {
+        heading: "Why weight matters",
+        body: [
+          "Carrying excess weight increases the strain on your heart and blood vessels. Even a small reduction in weight can lower blood pressure significantly.",
+          "Use the [BMI Calculator](/bmi-calculator) to understand your healthy range, and support your progress with balanced meals and regular movement.",
+        ],
+      },
+      {
+        heading: "How diet works with medication",
+        body: [
+          "If your doctor has prescribed blood pressure medication, continue taking it. Diet supports your treatment, but it is not a substitute for a prescribed medicine plan.",
+          "Discuss any major dietary changes or supplements with your healthcare provider. Some natural ingredients can interact with medications, so a safe approach is essential.",
+        ],
+      },
+      {
+        heading: "Common mistakes to avoid",
+        body: [
+          "Assuming only salt matters. Saturated fat, sugar, and overweight also influence blood pressure.",
+          "Relying on packaged ‘low-sodium’ foods. Many still contain hidden salt, sugar, or unhealthy fats.",
+          "Skipping regular blood pressure checks. Food helps, but you need to know your current numbers.",
+          "Using too much salt in homemade meals because of taste habit. Flavor food with herbs and lemon instead.",
+        ],
+      },
+      {
+        heading: "Expert tips for long-term success",
+        body: [
+          "Keep a simple food diary for one week to identify where sodium and unhealthy choices are hiding in your diet.",
+          "Cook more meals at home using fresh ingredients. Home cooking gives you control over salt, oil, and portion size.",
+          "Use a small plate to help manage portions. This is especially useful for rice, roti, and higher-energy foods.",
+          "Enjoy a variety of foods. Variety helps you stay consistent and makes the diet easier to follow over months.",
+        ],
+      },
+      {
+        heading: "FAQ",
+        body: [
+          "What is the best food for high blood pressure? There is no single best food, but leafy greens, beans, whole grains, lean protein, and healthy oils are among the most helpful choices.",
+          "Can I eat roti if I have high blood pressure? Yes. Whole wheat roti can be part of a balanced diet when portions are reasonable and it is paired with vegetables and lean protein.",
+          "Should I avoid salt entirely? No. The goal is moderation. Use less added salt and flavour food with spices, herbs, lemon, and garlic.",
+          "Can diet replace medication? Diet can improve blood pressure and support treatment, but anyone on medication should continue their doctor’s plan and discuss changes with a healthcare professional.",
+        ],
+      },
+      {
+        heading: "Summary",
+        body: [
+          "The best foods for high blood pressure are whole, nutrient-rich options that support healthy circulation, weight management, and blood vessel function. Use the meal ideas in this article to build a plan that fits your daily life.",
+          "Healthy blood pressure management is a long-term commitment. Combine these food choices with walking, better sleep, stress management, and regular medical follow-up to achieve the strongest results.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string) {
